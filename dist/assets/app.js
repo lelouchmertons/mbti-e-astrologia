@@ -212,22 +212,22 @@ const processRoleInfo = [
 const processRoles = processRoleInfo.map(([role]) => role);
 const mbtiQuestions = [
   ["EI","I","Antes de responder a uma ideia nova, prefiro organizar o pensamento em silêncio.","E","Entendo melhor a ideia enquanto converso sobre ela."],
-  ["EI","E","Depois de um dia cansativo, recupero energia encontrando pessoas ou mudando de ambiente.","I","Depois de um dia cansativo, recupero energia tendo tempo reservado para mim."],
-  ["EI","I","Em um grupo novo, observo o ambiente antes de me apresentar.","E","Em um grupo novo, começo a interagir e descubro o ambiente pela conversa."],
-  ["EI","E","Quando algo me entusiasma, procuro alguém para compartilhar imediatamente.","I","Quando algo me entusiasma, gosto de explorar a experiência sozinho antes de contar."],
-  ["EI","I","Prefiro poucos vínculos com bastante profundidade.","E","Prefiro uma rede ampla, com diferentes graus de proximidade."],
-  ["EI","E","Uma agenda com encontros e trocas frequentes costuma me estimular.","I","Uma agenda com bastante espaço sem interação costuma me estimular."],
-  ["EI","I","Costumo formular a frase inteira antes de começar a falar.","E","Costumo encontrar a formulação certa enquanto estou falando."],
-  ["EI","E","Em atividades coletivas, assumo presença visível com facilidade.","I","Em atividades coletivas, contribuo melhor sem precisar ocupar o centro."],
+  ["EI","E","Depois de passar muito tempo sozinho, procuro conversa ou movimento para recuperar a disposição.","I","Depois de muita interação, procuro silêncio para recuperar a disposição."],
+  ["EI","I","Em um grupo novo, observo o ambiente antes de começar a conversar.","E","Em um grupo novo, começo a conversar para conhecer o ambiente."],
+  ["EI","E","Quando algo me entusiasma, tenho vontade de compartilhar imediatamente com alguém.","I","Quando algo me entusiasma, prefiro processar a experiência antes de contar."],
+  ["EI","I","Prefiro manter poucos vínculos próximos a circular regularmente por muitos grupos.","E","Prefiro circular por muitos grupos a concentrar a vida social em poucos vínculos."],
+  ["EI","E","Pensar em voz alta costuma me ajudar a descobrir o que realmente penso.","I","Preciso saber o que penso antes de falar sobre o assunto."],
+  ["EI","I","Um fim de semana sem compromissos sociais costuma me renovar.","E","Um fim de semana cheio de encontros costuma me renovar."],
+  ["EI","E","Em atividades coletivas, costumo iniciar conversas e aproximar pessoas que ainda não se conhecem.","I","Em atividades coletivas, costumo esperar uma abertura antes de me aproximar."],
 
-  ["SN","S","Para aprender algo, começo por exemplos concretos e instruções demonstráveis.","N","Para aprender algo, começo pelo conceito geral e pelas possibilidades."],
-  ["SN","N","Ao ouvir uma história, noto primeiro o tema e o significado por trás dos fatos.","S","Ao ouvir uma história, noto primeiro a sequência e os detalhes do que aconteceu."],
-  ["SN","S","Confio mais em um método que já mostrou resultados consistentes.","N","Sinto mais interesse por um método novo que pode produzir algo diferente."],
-  ["SN","N","Uma ideia me atrai mesmo antes de eu saber exatamente como aplicá-la.","S","Uma ideia me atrai quando consigo visualizar onde e como será aplicada."],
-  ["SN","S","Quando recordo um acontecimento, recupero cenas, falas e detalhes específicos.","N","Quando recordo um acontecimento, recupero sobretudo a impressão e o significado."],
-  ["SN","N","Em uma explicação, gosto de conexões, analogias e interpretações.","S","Em uma explicação, gosto de etapas, exemplos e informações precisas."],
-  ["SN","S","Ao resolver um problema, verifico primeiro os fatos disponíveis.","N","Ao resolver um problema, imagino primeiro hipóteses que ainda não foram testadas."],
-  ["SN","N","Percebo rapidamente padrões que ligam assuntos aparentemente distantes.","S","Percebo rapidamente mudanças concretas no ambiente e no modo de executar algo."],
+  ["SN","S","Ao usar uma ferramenta nova, prefiro seguir um exemplo passo a passo antes de explorar outras possibilidades.","N","Prefiro entender primeiro o que a ferramenta pode fazer e depois descobrir os passos."],
+  ["SN","N","Ao entrar em um assunto novo, procuro primeiro a ideia central e só depois os detalhes.","S","Procuro primeiro exemplos e fatos para então formar uma visão geral."],
+  ["SN","S","Ao planejar uma viagem, quero saber horários, endereços e deslocamentos antes de imaginar como será a experiência.","N","Primeiro imagino experiências possíveis e só depois organizo a logística."],
+  ["SN","N","Gosto de discutir uma ideia promissora mesmo quando ainda não existe um modo claro de aplicá-la.","S","Uma ideia ganha meu interesse quando consigo visualizar sua aplicação."],
+  ["SN","S","Uma explicação me convence mais quando apresenta exemplos testados e resultados observáveis.","N","Uma explicação me convence mais quando revela um princípio que conecta situações diferentes."],
+  ["SN","N","Diante de uma obra ambígua, gosto de imaginar várias interpretações possíveis.","S","Diante de uma obra ambígua, prefiro identificar o que ela mostra de forma direta."],
+  ["SN","S","Percebo rapidamente quando uma etapa foi executada de modo diferente do procedimento combinado.","N","Percebo rapidamente quando o procedimento combinado já não serve ao objetivo maior."],
+  ["SN","N","Depois de uma conversa, lembro com mais facilidade da ideia central do que das palavras exatas.","S","Depois de uma conversa, lembro com mais facilidade de falas e detalhes específicos."],
 
   ["TF","T","Ao decidir, procuro aplicar critérios coerentes mesmo quando a conclusão desagrada.","F","Ao decidir, considero primeiro como cada pessoa será afetada."],
   ["TF","F","Em um conflito, preservar respeito e vínculo é parte central da solução.","T","Em um conflito, esclarecer a causa e corrigir a incoerência é parte central da solução."],
@@ -235,17 +235,26 @@ const mbtiQuestions = [
   ["TF","F","Quando alguém desabafa, minha primeira reação é acolher o que a pessoa sente.","T","Quando alguém desabafa, minha primeira reação é investigar o problema e buscar uma saída."],
   ["TF","T","Uma regra justa deve ser aplicada de forma consistente a casos semelhantes.","F","Uma regra justa deve permitir exceções quando as circunstâncias humanas mudam."],
   ["TF","F","Em uma equipe, percebo cedo quando alguém deixou de se sentir incluído.","T","Em uma equipe, percebo cedo quando o plano perdeu lógica ou eficiência."],
-  ["TF","T","Mudo de opinião quando os argumentos e as evidências são mais consistentes.","F","Mudo de opinião quando compreendo melhor os valores e necessidades envolvidos."],
+  ["TF","T","Consigo apoiar uma conclusão lógica mesmo quando uma pessoa próxima prefere outra resposta.","F","Ao decidir, a necessidade de uma pessoa próxima pode pesar mais do que a regra geral."],
   ["TF","F","Uma boa decisão precisa ser vivida como coerente com aquilo que valorizo.","T","Uma boa decisão precisa poder ser defendida por princípios e critérios verificáveis."],
 
   ["JP","J","Prefiro definir compromissos com antecedência e saber o que acontecerá.","P","Prefiro preservar espaço para decidir conforme a situação se desenvolve."],
   ["JP","P","Em uma viagem, gosto de escolher parte do roteiro quando já estou no destino.","J","Em uma viagem, gosto de sair com reservas e etapas principais definidas."],
   ["JP","J","Sinto alívio quando uma decisão importante finalmente foi encerrada.","P","Sinto alívio quando ainda posso revisar uma decisão importante."],
-  ["JP","P","Trabalho melhor em ciclos de exploração, alternando caminhos conforme descubro algo.","J","Trabalho melhor seguindo etapas e acompanhando o avanço até concluir."],
+  ["JP","P","Em um projeto, prefiro manter mais de um caminho aberto até entender qual funciona melhor.","J","Em um projeto, prefiro escolher cedo um caminho e avançar por etapas."],
   ["JP","J","Costumo começar cedo para reduzir imprevistos perto do prazo.","P","Costumo ganhar foco quando o prazo se aproxima e as opções se tornam concretas."],
   ["JP","P","Mudanças inesperadas podem tornar um plano mais interessante.","J","Mudanças inesperadas atrapalham até que eu reorganize o plano."],
   ["JP","J","Organizo objetos e informações para encontrá-los de maneira previsível.","P","Organizo objetos e informações de um modo flexível que faz sentido no momento."],
-  ["JP","P","Prefiro experimentar antes de fechar regras e procedimentos.","J","Prefiro estabelecer regras e procedimentos antes de começar a execução."]
+  ["JP","P","Prefiro experimentar uma tarefa na prática antes de definir o método definitivo.","J","Prefiro definir o método antes de começar a tarefa."],
+
+  ["AT","A","Depois de um erro pequeno, consigo seguir em frente sem revisitá-lo muitas vezes.","T","Depois de um erro pequeno, continuo pensando no que deveria ter feito."],
+  ["AT","T","Antes de mostrar um trabalho, costumo revisá-lo várias vezes por receio de ter deixado uma falha.","A","Quando o trabalho atende ao objetivo, consigo entregá-lo sem revisão excessiva."],
+  ["AT","T","Uma crítica inesperada costuma continuar ecoando em mim por bastante tempo.","A","Consigo separar rapidamente uma crítica útil daquilo que não preciso carregar."],
+  ["AT","A","Mesmo sob pressão, geralmente confio que encontrarei uma forma de lidar com a situação.","T","Sob pressão, duvido com facilidade da minha capacidade de responder bem."],
+  ["AT","T","Costumo comparar meu desempenho com o de outras pessoas para saber se estou indo bem.","A","Avalio meu desempenho principalmente pelos meus próprios critérios."],
+  ["AT","A","Quando recebo um elogio, consigo aceitá-lo sem pensar imediatamente no que ainda poderia melhorar.","T","Um elogio costuma me lembrar também do que ainda não ficou perfeito."],
+  ["AT","T","Depois de uma interação importante, preocupo-me bastante com a impressão que causei.","A","Depois de uma interação importante, raramente reviso cada detalhe do que falei."],
+  ["AT","A","Depois de tomar uma decisão, só volto a questioná-la quando surge uma informação nova.","T","Mesmo sem informação nova, costumo reconsiderar decisões já tomadas."]
 ];
 const mbtiTieBreakers = {
   EI: [
@@ -263,6 +272,10 @@ const mbtiTieBreakers = {
   JP: [
     ["J", "Diante de uma semana cheia, fico mais tranquilo quando compromissos e horários já estão definidos."],
     ["P", "Diante de uma semana cheia, fico mais tranquilo quando ainda existe espaço para adaptar compromissos e horários."]
+  ],
+  AT: [
+    ["A", "Depois de uma falha, recupero a confiança assim que identifico o próximo passo possível."],
+    ["T", "Depois de uma falha, preciso revisar o que aconteceu antes de recuperar a confiança."]
   ]
 };
 const missingTypeMeta = {
@@ -333,6 +346,36 @@ const signExtras = {
   "Capricórnio": {compatible:"Touro e Virgem acompanham seu compromisso com resultados; Escorpião e Peixes acrescentam profundidade e imaginação.", challenging:"Áries pode apressar seus planos, Câncer expõe necessidades emocionais e Libra exige negociação; todos desafiam sua tendência a centralizar responsabilidade.", rulerMeaning:"Saturno associa Capricórnio a tempo, limite, responsabilidade, estrutura, maturidade e conquista gradual.", ascendant:"Como ascendente, Capricórnio tende a transmitir seriedade, autocontrole e competência. A pessoa costuma avaliar riscos antes de ocupar uma posição.", growth:"Seu amadurecimento inclui reconhecer valor fora do desempenho. Pedir ajuda, celebrar etapas e flexibilizar o plano preservam a ambição sem endurecimento."},
   "Aquário": {compatible:"Gêmeos e Libra acompanham ideias e independência; Áries e Sagitário estimulam experimentação e projetos voltados ao futuro.", challenging:"Touro resiste à ruptura, Leão pede reconhecimento pessoal e Escorpião busca intimidade intensa; os três confrontam seu distanciamento.", rulerMeaning:"Saturno, regente tradicional, liga Aquário a sistemas e princípios; Urano, regente moderno, reforça inovação, ruptura e liberdade.", ascendant:"Como ascendente, Aquário tende a transmitir singularidade, independência e certa distância observadora, abordando o mundo por ideias e diferenças.", growth:"Seu amadurecimento pede presença emocional e compromisso com pessoas reais, não apenas com ideias coletivas. Pertencer também pode ser uma forma de liberdade."},
   "Peixes": {compatible:"Câncer e Escorpião reconhecem sua linguagem afetiva; Touro e Capricórnio oferecem chão e continuidade aos seus sonhos.", challenging:"Gêmeos racionaliza e dispersa, Virgem delimita e corrige, Sagitário busca uma verdade ampla; os três desafiam sua permeabilidade e ambiguidade.", rulerMeaning:"Júpiter, regente tradicional, liga Peixes a fé e expansão; Netuno, regente moderno, reforça imaginação, dissolução e sensibilidade simbólica.", ascendant:"Como ascendente, Peixes tende a transmitir suavidade, receptividade e adaptação ao ambiente, com fronteiras iniciais mais fluidas.", growth:"Seu amadurecimento depende de limites, rotina e discernimento. Dar forma ao que sente protege sua sensibilidade e transforma imaginação em criação compartilhável."}
+};
+
+const signMoonMeanings = {
+  "Áries": "Com a Lua em Áries, as emoções pedem movimento e respostas diretas. A segurança volta quando a pessoa pode agir, nomear o incômodo e recuperar autonomia, embora reações rápidas precisem de tempo para não virar impulsividade.",
+  "Touro": "Com a Lua em Touro, estabilidade, conforto físico e continuidade ajudam a regular as emoções. Mudanças bruscas podem ser difíceis; rotinas confiáveis e vínculos consistentes devolvem sensação de segurança.",
+  "Gêmeos": "Com a Lua em Gêmeos, falar, perguntar e compreender o que aconteceu ajuda a processar sentimentos. Variedade mental traz alívio, mas explicar tudo pode virar uma forma de evitar permanecer na emoção.",
+  "Câncer": "Com a Lua em Câncer, cuidado, intimidade e pertencimento ocupam o centro da vida emocional. Memórias e atmosferas têm grande peso, e a pessoa precisa de limites para acolher sem absorver tudo ao redor.",
+  "Leão": "Com a Lua em Leão, afeto precisa ser caloroso, visível e sincero. Criatividade e reconhecimento restauram vitalidade; quando se sente ignorada, a pessoa pode dramatizar antes de revelar que precisava de atenção.",
+  "Virgem": "Com a Lua em Virgem, organizar, ajudar e compreender detalhes oferece segurança emocional. O cuidado aparece em gestos úteis, mas a tentativa de corrigir tudo pode transformar sensibilidade em autocobrança.",
+  "Libra": "Com a Lua em Libra, harmonia, reciprocidade e conversa equilibrada ajudam a regular as emoções. A pessoa percebe o clima da relação com facilidade, mas precisa aprender a não adiar necessidades próprias para evitar conflito.",
+  "Escorpião": "Com a Lua em Escorpião, emoções são vividas com intensidade e reserva. Confiança profunda e honestidade restauram segurança; testes silenciosos e controle podem surgir quando existe medo de vulnerabilidade.",
+  "Sagitário": "Com a Lua em Sagitário, liberdade, horizonte e sentido ajudam a recuperar ânimo. Aprender, viajar ou mudar de perspectiva renova a vida emocional, desde que o otimismo não seja usado para fugir de sentimentos difíceis.",
+  "Capricórnio": "Com a Lua em Capricórnio, responsabilidade e autocontrole oferecem sensação de segurança. A pessoa costuma demonstrar cuidado por constância e trabalho, mas precisa permitir descanso e apoio sem tratá-los como fraqueza.",
+  "Aquário": "Com a Lua em Aquário, espaço, amizade e coerência com princípios ajudam a organizar emoções. A pessoa observa o que sente antes de se envolver, e pode precisar lembrar que compreender uma emoção não substitui vivê-la.",
+  "Peixes": "Com a Lua em Peixes, imaginação, empatia e recolhimento dão forma à experiência emocional. A pessoa capta nuances do ambiente com facilidade e precisa de limites concretos para diferenciar o que sente daquilo que absorveu."
+};
+
+const signMidheavenMeanings = {
+  "Áries": "No Meio do Céu, Áries favorece uma imagem pública de iniciativa e coragem. A vocação tende a pedir autonomia, decisões rápidas e espaço para abrir caminhos.",
+  "Touro": "No Meio do Céu, Touro busca construir reputação por constância, qualidade e resultados duradouros. A carreira cresce melhor quando existe tempo para cultivar recursos e domínio técnico.",
+  "Gêmeos": "No Meio do Céu, Gêmeos destaca comunicação, versatilidade e circulação de informações. A vida pública pode reunir mais de uma função ou mudar conforme novos interesses aparecem.",
+  "Câncer": "No Meio do Céu, Câncer associa realização pública a cuidado, proteção e criação de pertencimento. A reputação pode nascer da capacidade de compreender necessidades humanas e sustentar comunidades.",
+  "Leão": "No Meio do Céu, Leão procura expressão autoral, visibilidade e liderança criativa. A pessoa tende a querer deixar uma assinatura reconhecível no trabalho que apresenta ao mundo.",
+  "Virgem": "No Meio do Céu, Virgem constrói reputação por competência, precisão e utilidade. A vocação costuma envolver aperfeiçoar processos, resolver problemas e tornar sistemas mais funcionais.",
+  "Libra": "No Meio do Céu, Libra favorece diplomacia, estética, mediação e trabalho em parceria. A imagem pública cresce pela habilidade de equilibrar interesses e construir acordos.",
+  "Escorpião": "No Meio do Céu, Escorpião busca profundidade, estratégia e transformação. A carreira pode envolver crises, investigação, poder, recursos compartilhados ou mudanças que exigem confiança.",
+  "Sagitário": "No Meio do Céu, Sagitário relaciona vocação a expansão, ensino, viagens, justiça ou divulgação de ideias. A pessoa precisa sentir que o trabalho amplia horizontes.",
+  "Capricórnio": "No Meio do Céu, Capricórnio enfatiza responsabilidade, autoridade e construção de longo prazo. A reputação costuma amadurecer gradualmente por disciplina e capacidade de sustentar estruturas.",
+  "Aquário": "No Meio do Céu, Aquário favorece inovação, redes e projetos coletivos. A pessoa pode construir reconhecimento ao questionar padrões e propor formas diferentes de organizar o futuro.",
+  "Peixes": "No Meio do Céu, Peixes associa vocação a imaginação, sensibilidade e serviço. Arte, cuidado e trabalhos que lidam com símbolos ou experiências humanas sutis podem ganhar destaque."
 };
 
 const state = { mode: "mbti", view: "types", query: "" };
@@ -471,6 +514,8 @@ function openDetail(id) {
         <section class="detail-block"><h3>Relações mais desafiadoras</h3><p>${emphasizeNames(extra.challenging)}</p></section>
         <section class="detail-block"><h3>Planeta regente</h3><p>${emphasizeNames(extra.rulerMeaning)}</p></section>
         <section class="detail-block"><h3>${item.name} como ascendente</h3><p>${emphasizeNames(extra.ascendant)}</p></section>
+        <section class="detail-block"><h3>Lua em ${item.name}</h3><p>${emphasizeNames(signMoonMeanings[item.name])}</p></section>
+        <section class="detail-block"><h3>Meio do Céu em ${item.name}</h3><p>${emphasizeNames(signMidheavenMeanings[item.name])}</p></section>
         <section class="detail-block full"><h3>Caminhos de amadurecimento</h3><p>${emphasizeNames(extra.growth)}</p></section>
       </div>`;
   }
@@ -674,13 +719,13 @@ function updateTestProgress() {
 function calculateMbtiTest(event) {
   event.preventDefault();
   if (testAnswers.size !== mbtiQuestions.length) return;
-  const scores = {EI:{E:0,I:0},SN:{S:0,N:0},TF:{T:0,F:0},JP:{J:0,P:0}};
+  const scores = {EI:{E:0,I:0},SN:{S:0,N:0},TF:{T:0,F:0},JP:{J:0,P:0},AT:{A:0,T:0}};
   mbtiQuestions.forEach(([axis,leftCode,,rightCode], index) => {
     const value = testAnswers.get(index);
     if (value > 0) scores[axis][leftCode] += value;
     if (value < 0) scores[axis][rightCode] += Math.abs(value);
   });
-  const axes = [["EI","E","I"],["SN","S","N"],["TF","T","F"],["JP","J","P"]];
+  const axes = [["EI","E","I"],["SN","S","N"],["TF","T","F"],["JP","J","P"],["AT","A","T"]];
   const ties = axes.filter(([axis,a,b]) => scores[axis][a] === scores[axis][b]);
   if (ties.length) {
     renderTieBreakers(scores, ties);
@@ -710,8 +755,11 @@ function renderTieBreakers(scores, ties) {
 }
 
 function renderMbtiResult(scores) {
-  const axes = [["EI","E","I"],["SN","S","N"],["TF","T","F"],["JP","J","P"]];
-  const result = axes.map(([axis,a,b]) => scores[axis][a] > scores[axis][b] ? a : b).join("");
+  const typeAxes = [["EI","E","I"],["SN","S","N"],["TF","T","F"],["JP","J","P"]];
+  const axes = [...typeAxes,["AT","A","T"]];
+  const result = typeAxes.map(([axis,a,b]) => scores[axis][a] > scores[axis][b] ? a : b).join("");
+  const identity = scores.AT.A > scores.AT.T ? "A" : "T";
+  const fullResult = `${result}-${identity}`;
   const exact = personalityExtras[result];
   const resultNode = document.querySelector("#test-result");
   const axisRows = axes.map(([axis,a,b]) => {
@@ -719,7 +767,7 @@ function renderMbtiResult(scores) {
     const leftPercent = total ? Math.round(scores[axis][a] / total * 100) : 50;
     return `<div><span><b>${a}</b> ${leftPercent}%</span><i><b style="width:${leftPercent}%"></b></i><span>${100-leftPercent}% <b>${b}</b></span></div>`;
   }).join("");
-  resultNode.innerHTML = `<header><span>RESULTADO INDICATIVO</span><h2>${result}</h2><p>O padrão mais próximo foi <strong>${result}</strong>, conhecido aqui como <strong>${exact.title}</strong>.</p></header><div class="test-axis-result">${axisRows}</div><p class="test-result-note">Seu resultado representa as preferências que mais combinam com você hoje. Elas podem ganhar novas formas conforme suas experiências e seu momento de vida mudam, mas oferecem uma base valiosa para compreender como você percebe o mundo, toma decisões e se relaciona.</p><div class="test-result-actions"><button type="button" data-result-type="${result}">ABRIR FICHA DE ${result}</button><button type="button" id="reset-test">REFAZER TESTE</button></div>`;
+  resultNode.innerHTML = `<header><span>RESULTADO INDICATIVO</span><h2>${fullResult}</h2><p>O padrão mais próximo foi <strong>${fullResult}</strong>: o tipo-base <strong>${result}</strong>, conhecido aqui como <strong>${exact.title}</strong>, com identidade <strong>${identity === "A" ? "Assertiva" : "Turbulenta"}</strong>.</p></header><div class="test-axis-result">${axisRows}</div><p class="test-result-note">Seu resultado representa as preferências que mais combinam com você hoje. Elas podem ganhar novas formas conforme suas experiências e seu momento de vida mudam, mas oferecem uma base valiosa para compreender como você percebe o mundo, toma decisões e se relaciona.</p><div class="test-result-actions"><button type="button" data-result-type="${result}">ABRIR FICHA DE ${result}</button><button type="button" id="reset-test">REFAZER TESTE</button></div>`;
   resultNode.hidden = false;
   resultNode.querySelector("[data-result-type]")?.addEventListener("click", buttonEvent => openDetail(buttonEvent.currentTarget.dataset.resultType));
   resultNode.querySelector("#reset-test").addEventListener("click", resetMbtiTest);
@@ -738,6 +786,7 @@ document.querySelectorAll(".mode-label").forEach(button => button.addEventListen
 document.querySelector(".switch-arrow").addEventListener("click", () => setMode(state.mode === "mbti" ? "astro" : "mbti"));
 document.querySelectorAll(".view-switch button").forEach(button => button.addEventListener("click", () => setView(button.dataset.view)));
 document.querySelectorAll("[data-open-test]").forEach(button => button.addEventListener("click", () => setView("test")));
+document.querySelectorAll("[data-open-chart]").forEach(button => button.addEventListener("click", () => setView("birth-chart")));
 search.addEventListener("input", event => { state.query = event.target.value; render(); });
 document.querySelector("#clear-search").addEventListener("click", () => { search.value = ""; state.query = ""; render(); search.focus(); });
 document.querySelector("#calculate-match").addEventListener("click", calculateMatch);
@@ -750,3 +799,4 @@ function updateOnline() { const label = document.querySelector(".offline-status 
 if ("serviceWorker" in navigator) window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
 renderMbtiTest();
 setMode("mbti");
+

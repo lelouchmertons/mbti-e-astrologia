@@ -88,6 +88,23 @@ a { color: inherit; }
 .empty-state { padding: 80px 20px; text-align: center; border: 1px solid var(--line); }
 .empty-state strong { display: block; font: 500 30px var(--serif); }
 .empty-state button { margin-top: 20px; border: 1px solid currentColor; background: transparent; color: inherit; padding: 10px 16px; cursor: pointer; }
+.prevalence-panel { margin-top: 88px; border-top: 1px solid var(--line); }
+.prevalence-panel > header { display: grid; grid-template-columns: .85fr 1.15fr; gap: 40px 7vw; align-items: end; padding: 48px 0 34px; }
+.prevalence-panel > header h2 { margin: 0; font: 500 clamp(38px, 4.5vw, 66px)/1 var(--serif); }
+.prevalence-panel > header > p { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.prevalence-table-wrap { overflow-x: auto; border: 1px solid var(--line); background: rgba(255,255,255,.22); }
+.prevalence-table { width: 100%; border-collapse: collapse; }
+.prevalence-table th, .prevalence-table td { padding: 15px 20px; border-bottom: 1px solid var(--line); text-align: left; }
+.prevalence-table thead th { color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.prevalence-table tbody tr:last-child th, .prevalence-table tbody tr:last-child td { border-bottom: 0; }
+.prevalence-table tbody td:first-child { width: 90px; color: var(--muted); font: 700 13px var(--serif); }
+.prevalence-table tbody th { width: 110px; color: var(--ink); font: 750 19px var(--sans); }
+.prevalence-table td span { min-width: 320px; display: grid; grid-template-columns: minmax(180px,1fr) 64px; gap: 18px; align-items: center; }
+.prevalence-table td i { height: 11px; position: relative; overflow: hidden; background: color-mix(in srgb,var(--identity),transparent 88%); }
+.prevalence-table td i::after { content:""; position:absolute; inset:0 auto 0 0; width:var(--share); min-width:8px; background:var(--identity); }
+.prevalence-table td b { color: var(--ink); text-align: right; }
+.prevalence-source { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
+.prevalence-source a { color: inherit; text-underline-offset: 3px; }
 .about-page { min-height: calc(100vh - 174px); padding: clamp(74px, 8vw, 130px) clamp(24px, 6vw, 96px) 110px; }
 .match-page { min-height: calc(100vh - 174px); padding: clamp(74px, 8vw, 120px) clamp(24px, 6vw, 96px) 110px; }
 .match-page > header { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 34px 8vw; padding-bottom: 58px; }
@@ -158,6 +175,13 @@ a { color: inherit; }
 .element-theory p { display: grid; grid-template-columns: 72px 1fr; gap: 14px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--line); }
 .element-theory p:last-child { border-bottom: 0; }
 .element-theory strong { color: var(--ink); }
+.astro-points { display: grid; gap: 0; }
+.astro-points p { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.astro-points p:last-child { border-bottom: 0; }
+.astro-points strong { color: var(--ink); }
+.astro-points span { display: block; }
+.chart-cta { margin-top: 28px; padding: 15px 19px; border: 0; background: #9cd4ff; color: #07152f; font-size: 11px; font-weight: 850; letter-spacing: .12em; cursor: pointer; }
+.chart-cta span { margin-left: 16px; font-size: 18px; }
 .rhythm-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 26px 0; }
 .rhythm-grid > div { padding: 22px; border: 1px solid var(--line); background: color-mix(in srgb, var(--identity), transparent 95%); }
 .rhythm-grid > div > strong { display: block; margin-bottom: 10px; color: var(--ink); font-size: 15px; text-transform: uppercase; letter-spacing: .06em; }
@@ -229,6 +253,10 @@ a { color: inherit; }
 .birth-chart-grid .chart-layers p { display: grid; grid-template-columns: 90px 1fr; gap: 16px; margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .birth-chart-grid .chart-layers strong { color: var(--ink); }
 .birth-chart-grid .chart-layers span { display: block; }
+.chart-data-points { display: grid; gap: 0; margin-top: 24px; border-top: 1px solid var(--line); }
+.chart-data-points p { display: grid; grid-template-columns: 110px 1fr; gap: 14px; margin: 0; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; line-height: 1.5; }
+.chart-data-points strong { color: var(--ink); }
+.chart-data-points span { display: block; }
 .birth-chart-grid .chart-houses-intro { grid-column: 1 / -1; }
 .house-meanings { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:24px; }
 .house-meanings p { display:grid; grid-template-columns:30px 1fr; gap:10px; align-items:start; margin:0; padding:12px; border:1px solid var(--line); background:rgba(143,205,244,.04); font-size:14px; line-height:1.45; }
@@ -289,6 +317,9 @@ body.mode-astro { --ink: #f3f0ff; --muted: #bbb5d0; --paper: #07152f; --panel: #
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
+  .prevalence-panel > header { grid-template-columns: 1fr; }
+  .prevalence-table th, .prevalence-table td { padding: 13px 14px; }
+  .prevalence-table td span { min-width: 230px; grid-template-columns: minmax(130px,1fr) 56px; }
   .preference-theory p { grid-template-columns: 1fr; gap: 8px; }
   .function-theory { grid-template-columns: 1fr; }
   .function-theory p:first-child { grid-column: auto; }
@@ -330,6 +361,7 @@ body.mode-astro { --ink: #f3f0ff; --muted: #bbb5d0; --paper: #07152f; --panel: #
   .birth-chart-grid .chart-intro { grid-column: auto; }
   .about-grid article { min-height: auto; padding: 30px 24px 36px; }
   .identity-compare { grid-template-columns: 1fr; }
+  .astro-points p, .chart-data-points p { grid-template-columns: 1fr; gap: 4px; }
   footer { flex-direction: column; }
   .detail-hero { padding: 70px 26px 40px; }
   .detail-sections { padding: 35px 26px 55px; grid-template-columns: 1fr; }
@@ -450,3 +482,4 @@ body.mode-astro { --ink: #f3f0ff; --muted: #bbb5d0; --paper: #07152f; --panel: #
   .chart-wheel-wrap { gap:26px; }
   .chart-data-split > div { border-right:0; border-bottom:1px solid var(--line); }
 }
+
