@@ -424,7 +424,9 @@ function render() {
 
 function personalityCard(item, index) {
   const extra = personalityExtras[item.id];
-  return `<button class="catalogue-card" style="--accent:${item.accent}" data-id="${item.id}" type="button">
+  const cataloguePosition = [...personalities].sort((a,b) => a.id.localeCompare(b.id)).findIndex(entry => entry.id === item.id);
+  const stripe = ["var(--energy)", "var(--perception)", "var(--decision)", "var(--structure)"][Math.floor(cataloguePosition / 4)];
+  return `<button class="catalogue-card" style="--accent:${item.accent};--stripe:${stripe}" data-id="${item.id}" type="button">
     <span class="card-top"><span class="card-index">${String(index + 1).padStart(2,"0")}</span><span class="card-arrow" aria-hidden="true">›</span></span>
     <h3>${item.id}</h3><h4 class="type-title">${extra.title}</h4><p class="subtitle"><strong>${item.id}</strong>: ${item.summary}</p>
     <span class="letter-code" aria-label="${item.preferences.map(p => p[1]).join(", ")}; identidade Assertiva ou Turbulenta">${item.id.split("").map(letter => `<span>${letter}</span>`).join("")}<span class="identity-letter">A/T</span></span>
