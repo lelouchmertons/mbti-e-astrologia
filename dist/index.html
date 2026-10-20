@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9ecef">
+  <meta name="description" content="Um guia visual e pesquisável de tipos MBTI e signos astrológicos.">
+  <title>MBTI e Astrologia</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="assets/styles.css?v=14">
+</head>
+<body class="mode-mbti">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="brand" aria-label="MBTI e Astrologia">
+      <span class="brand-mark">PA</span>
+      <span class="brand-copy"><strong>Atlas interior</strong><small>tipos &amp; símbolos</small></span>
+    </div>
+    <nav class="mode-switch" aria-label="Escolha o tema">
+      <button class="mode-label active" data-mode="mbti" type="button">MBTI</button>
+      <button class="switch-arrow" type="button" aria-label="Alternar entre MBTI e Astrologia" aria-pressed="false">
+        <span class="dial-dot"></span><span class="dial-hand"></span>
+      </button>
+      <button class="mode-label" data-mode="astro" type="button">ASTROLOGIA</button>
+    </nav>
+    <span class="offline-status" aria-live="polite"><i></i><span>Disponível offline</span></span>
+  </header>
+
+  <nav class="view-switch" aria-label="Conteúdo da seção">
+    <button type="button" data-view="about">O QUE É</button>
+    <button class="active" type="button" data-view="types">TIPOS</button>
+    <button type="button" data-view="match">MATCH</button>
+    <button id="mbti-test-tab" type="button" data-view="test">TESTE</button>
+    <button id="birth-chart-tab" type="button" data-view="birth-chart" hidden>MAPA ASTRAL</button>
+  </nav>
+
+  <main id="conteudo">
+    <section class="hero mbti-only types-view">
+      <p class="eyebrow">DEZESSEIS TIPOS · CINCO EIXOS VISUAIS</p>
+      <h1>MBTI <small>(Myers-Briggs Type Indicator)</small></h1>
+      <p class="hero-copy">Um instrumento de tipologia que organiza preferências de atenção, percepção, decisão e estilo de vida. As combinações formam 16 tipos e ajudam a descrever tendências sem determinar capacidade, caráter ou destino.</p>
+      <button class="test-cta" type="button" data-open-test>FAZER TESTE MBTI <span>→</span></button>
+      <div class="axis-legend" aria-label="Legenda das cores das letras">
+        <span class="axis-energy"><b>E / I</b> energia</span>
+        <span class="axis-perception"><b>S / N</b> percepção</span>
+        <span class="axis-decision"><b>T / F</b> decisão</span>
+        <span class="axis-structure"><b>J / P</b> organização</span>
+        <span class="axis-identity"><b>A / T</b> identidade</span>
+      </div>
+    </section>
+
+    <section class="hero astro-only types-view" hidden>
+      <p class="eyebrow">DOZE SIGNOS · QUATRO ELEMENTOS</p>
+      <h1>Um céu de<br><em>arquétipos.</em></h1>
+      <p class="hero-copy">Percorra os doze signos como uma tradição simbólica. Descubra como elementos, modalidades e planetas regentes constroem personalidades distintas e diferentes formas de se relacionar com o mundo.</p>
+      <div class="element-legend" aria-label="Cores dos elementos">
+        <span class="fire">Fogo</span><span class="earth">Terra</span><span class="air">Ar</span><span class="water">Água</span>
+      </div>
+    </section>
+
+    <section class="catalogue types-view" aria-labelledby="catalogue-title">
+      <div class="catalogue-toolbar">
+        <div>
+          <p class="section-kicker" id="catalogue-kicker">TIPOS DISPONÍVEIS</p>
+          <h2 id="catalogue-title">Tipos MBTI</h2>
+        </div>
+        <label class="search-box">
+          <span class="sr-only">Pesquisar</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+          <input id="search" type="search" autocomplete="off" placeholder="Pesquisar código, título ou característica…">
+          <kbd>/</kbd>
+        </label>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+      <div class="card-grid" id="card-grid"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <strong>Nenhum resultado encontrado.</strong>
+        <button id="clear-search" type="button">Limpar pesquisa</button>
+      </div>
+    </section>
+
+    <section class="about-page about-view mbti-only" hidden>
+      <header>
+        <p class="eyebrow">INTRODUÇÃO AO MODELO</p>
+        <h1>O que é<br><em>MBTI?</em></h1>
+        <p>MBTI é a sigla de <strong>Myers-Briggs Type Indicator</strong>. O instrumento combina quatro pares de preferências para formar 16 tipos. Ele descreve caminhos que uma pessoa tende a achar mais naturais; não mede inteligência, competência, saúde mental ou valor pessoal.</p>
+        <button class="test-cta" type="button" data-open-test>FAZER TESTE MBTI <span>→</span></button>
+      </header>
+      <div class="about-grid">
+        <article class="wide-theory"><span>01</span><h2>Os quatro pares de preferências</h2><div class="preference-theory">
+          <p><strong>E / I · Extroversão ou Introversão</strong><span>Indica onde a atenção tende a se renovar. <b>E</b> pensa e ganha impulso ao interagir com o ambiente; <b>I</b> costuma organizar a experiência primeiro no espaço interior. Não mede timidez nem habilidade social.</span></p>
+          <p><strong>S / N · Sensação ou Intuição</strong><span>Indica como a pessoa prefere perceber informações. <b>S</b> começa pelo que é concreto, verificável e presente; <b>N</b> procura padrões, relações e possibilidades. A letra <b>N</b> é usada porque <b>I</b> já representa Introversão.</span></p>
+          <p><strong>T / F · Pensamento ou Sentimento</strong><span>Indica o critério que costuma receber mais peso numa decisão. <b>T</b> busca coerência lógica e critérios consistentes; <b>F</b> considera valores e efeitos humanos. Ambos podem ser racionais, sensíveis e empáticos.</span></p>
+          <p><strong>J / P · Julgamento ou Percepção</strong><span>Indica como a pessoa prefere organizar a vida externa. <b>J</b> se sente melhor com decisões, prazos e fechamento; <b>P</b> preserva alternativas e responde com flexibilidade ao que surge. Não significa julgar pessoas nem perceber melhor.</span></p>
+        </div></article>
+        <article class="wide-theory"><span>02</span><h2>A teoria por trás das quatro letras</h2><p>Na teoria do MBTI, <strong>Sensação (Sensing)</strong> e <strong>Intuição (Intuition)</strong> são processos de <strong>percepção</strong>: descrevem como recolhemos informações. <strong>Pensamento (Thinking)</strong> e <strong>Sentimento (Feeling)</strong> são processos de <strong>julgamento</strong>: descrevem como avaliamos o que foi percebido e chegamos a uma decisão. Cada processo pode se orientar para o mundo <strong>extravertido</strong>, mais atento ao ambiente e à ação visível, ou para o mundo <strong>introvertido</strong>, mais voltado à reflexão e às referências internas.</p><div class="function-decoder"><h3>Como ler duas letras juntas</h3><p>A letra maiúscula identifica o processo e a minúscula indica sua direção. <strong>Ni</strong> é Intuição Introvertida; <strong>Ne</strong>, Intuição Extravertida; <strong>Ti</strong>, Pensamento Introvertido; <strong>Te</strong>, Pensamento Extravertido. A mesma regra forma <strong>Si</strong>, <strong>Se</strong>, <strong>Fi</strong> e <strong>Fe</strong>. Essas combinações não acrescentam novas letras ao tipo: mostram como as preferências do código de quatro letras trabalham juntas.</p><h3>Como descobrir a ordem</h3><p>As duas letras centrais fornecem um processo de percepção, <strong>S ou N</strong>, e um processo de julgamento, <strong>T ou F</strong>. A última letra informa qual deles aparece no mundo externo: tipos <strong>J</strong> exteriorizam o processo de julgamento; tipos <strong>P</strong> exteriorizam o processo de percepção. A primeira letra determina a prioridade: em tipos <strong>E</strong>, o processo exteriorizado é o Dominante; em tipos <strong>I</strong>, ele é o Auxiliar, pois o Dominante atua internamente.</p><p class="decoder-example"><strong>Exemplo: INTJ.</strong> O <strong>J</strong> mostra que o processo exteriorizado é o julgamento <strong>T</strong>, formando <strong>Te</strong>. Como o tipo começa com <strong>I</strong>, esse processo exterior é Auxiliar. O processo interno <strong>N</strong> torna-se <strong>Ni</strong> e ocupa a posição Dominante. As funções opostas completam a sequência: <strong>Fi</strong> como Terciária e <strong>Se</strong> como Inferior.</p><p class="section-note">Nas fichas, usamos a sequência alternada mais difundida para representar as quatro funções. A orientação exata da função Terciária é discutida entre autores do próprio campo; por isso, a ordem deve ser lida como um modelo de preferência e desenvolvimento, não como uma medição rígida.</p></div><div class="function-theory" id="function-order"></div></article>
+        <article><span>03</span><h2>E o sufixo A/T?</h2><p><strong>Assertivo (-A)</strong> e <strong>Turbulento (-T)</strong> são um quinto eixo criado pelo modelo do 16Personalities, não pelo MBTI oficial. Ele compara principalmente autoconfiança, autocrítica e reação ao estresse. Por isso, as duas variantes aparecem juntas na ficha do mesmo tipo.</p></article>
+        <article><span>04</span><h2>Tendência, não destino</h2><p>O MBTI descreve caminhos que parecem mais naturais, não um roteiro obrigatório. Duas pessoas do mesmo tipo podem agir de maneiras muito diferentes porque maturidade, cultura, experiências, valores, ambiente e momento de vida também moldam suas escolhas. Até uma preferência forte pode ceder quando a situação pede outra habilidade. Por isso, as fichas e o Match servem como mapas de tendências: ajudam a nomear facilidades, atritos e possibilidades de desenvolvimento, mas não substituem a conversa real nem decidem quem alguém é ou com quem deveria se relacionar.</p></article>
+      </div>
+    </section>
+
+    <section class="about-page about-view astro-only" hidden>
+      <header>
+        <p class="eyebrow">INTRODUÇÃO À LINGUAGEM ASTROLÓGICA</p>
+        <h1>O que é<br><em>astrologia?</em></h1>
+        <p>A astrologia é uma tradição simbólica que relaciona posições celestes a arquétipos humanos. Aqui, o foco está nos doze signos: seus elementos, modalidades, planetas regentes e formas tradicionais de expressão.</p>
+      </header>
+      <div class="about-grid">
+        <article><span>01</span><h2>O que um signo representa?</h2><p>O signo solar é definido pela posição do Sol na data de nascimento. Na interpretação astrológica, ele descreve tendências de identidade, motivação e maneira de expressar vontade. Isso não significa que toda pessoa do mesmo signo tenha a mesma personalidade: o signo solar é uma parte da leitura e se combina com o restante do mapa.</p></article>
+        <article><span>02</span><h2>Os quatro elementos</h2><div class="element-theory"><p><strong>Fogo</strong><span>Prioriza iniciativa, entusiasmo, coragem e expressão pessoal.</span></p><p><strong>Terra</strong><span>Prioriza realidade concreta, estabilidade, recursos e resultados duradouros.</span></p><p><strong>Ar</strong><span>Prioriza ideias, comunicação, comparação de perspectivas e vínculos sociais.</span></p><p><strong>Água</strong><span>Prioriza emoções, intimidade, memória afetiva e percepção do ambiente.</span></p></div></article>
+        <article class="wide-theory"><span>03</span><h2>Como cada signo age</h2><p>Os doze signos se distribuem por três ritmos. Os <strong>cardinais</strong> começam um movimento, os <strong>fixos</strong> sustentam e aprofundam o que já existe, e os <strong>mutáveis</strong> adaptam, reorganizam e preparam a passagem para uma nova fase. Essa lógica se aplica aos quatro elementos; o que muda é o assunto em que cada ritmo atua.</p><div class="rhythm-grid"><div><strong>Cardinais: iniciam</strong><p><b>Áries</b><span>Inicia pela ação e pelo confronto direto com o desafio.</span></p><p><b>Câncer</b><span>Inicia ao criar proteção, intimidade e pertencimento.</span></p><p><b>Libra</b><span>Inicia pelo diálogo, pela parceria e pela construção de acordos.</span></p><p><b>Capricórnio</b><span>Inicia por metas, planejamento e criação de estrutura.</span></p></div><div><strong>Fixos: sustentam</strong><p><b>Leão</b><span>Sustenta expressão, criatividade e confiança no próprio centro.</span></p><p><b>Escorpião</b><span>Sustenta intensidade emocional, compromisso e transformação.</span></p><p><b>Aquário</b><span>Sustenta ideias, princípios e projetos voltados ao coletivo.</span></p><p><b>Touro</b><span>Sustenta recursos, hábitos, prazer e estabilidade material.</span></p></div><div><strong>Mutáveis: adaptam</strong><p><b>Sagitário</b><span>Adapta convicções ao encontrar experiências e horizontes novos.</span></p><p><b>Peixes</b><span>Adapta-se a sentimentos, atmosferas e necessidades sutis.</span></p><p><b>Gêmeos</b><span>Reorganiza informações, linguagens e pontos de vista.</span></p><p><b>Virgem</b><span>Aperfeiçoa métodos, detalhes e formas de servir ao objetivo.</span></p></div></div><p class="theory-conclusion">Assim, “iniciar, sustentar ou adaptar” não significa fazer a mesma coisa em todos os elementos. Indica a função que o signo cumpre dentro do seu próprio campo de ação.</p></article>
+        <article><span>04</span><h2>Planeta regente</h2><p>Cada signo possui uma regência tradicional. O planeta funciona como uma chave para compreender suas prioridades. <strong>Touro</strong>, por exemplo, é regido por Vênus, o que associa sua busca por estabilidade a prazer, valor e vínculo. A regência não é escolhida separadamente e não muda de pessoa para pessoa.</p></article>
+        <article><span>05</span><h2>O que o ascendente acrescenta?</h2><p>O ascendente é o signo que surgia no horizonte no momento e no lugar do nascimento. Na linguagem astrológica, descreve a primeira reação a uma situação, a maneira de entrar em ambientes e a impressão inicial transmitida. Uma pessoa com Sol em <strong>Touro</strong> e ascendente em <strong>Escorpião</strong> pode buscar estabilidade e previsibilidade, mas aproximar-se de pessoas novas com reserva, intensidade e atenção à confiança.</p></article>
+        <article><span>06</span><h2>Como descobrir o ascendente?</h2><p>Não existe uma tabela universal de horários. O signo no horizonte muda aproximadamente a cada duas horas, mas a duração varia com a data e a latitude. O cálculo correto precisa da data, do horário mais exato possível e da cidade de nascimento, além do fuso horário e de eventuais regras históricas de horário de verão. Por isso, duas pessoas nascidas na mesma hora em cidades distantes podem ter ascendentes diferentes.</p></article>
+      </div>
+    </section>
+
+    <section class="test-page test-view mbti-only" hidden>
+      <header>
+        <p class="eyebrow">QUESTIONÁRIO INDICATIVO</p>
+        <h1>Descubra suas<br><em>preferências.</em></h1>
+        <p>Responda às 32 situações pensando no que costuma ser mais natural para você, não no que parece mais admirável. Não existem respostas certas. Este questionário é autoral, educativo e não substitui a aplicação oficial do MBTI.</p>
+      </header>
+      <div class="test-progress" aria-live="polite"><span id="test-progress-label">0 de 32 respondidas</span><i><b id="test-progress-bar"></b></i></div>
+      <form id="mbti-test-form">
+        <div class="question-list" id="question-list"></div>
+        <div class="test-submit-wrap">
+          <button class="test-submit" id="test-submit" type="submit" disabled>VER RESULTADO INDICATIVO</button>
+          <p id="test-incomplete">Responda a todas as perguntas para calcular o resultado.</p>
+        </div>
+      </form>
+      <div class="test-result" id="test-result" hidden></div>
+    </section>
+
+    <section class="match-page match-view" hidden>
+      <header>
+        <p class="eyebrow" id="match-kicker">COMPARAÇÃO ENTRE TIPOS</p>
+        <h1 id="match-title">Match de<br><em>MBTI.</em></h1>
+        <p id="match-copy">Escolha dois tipos para compreender como suas preferências podem aparecer na amizade, no trabalho, no afeto e no crescimento conjunto.</p>
+      </header>
+      <div class="match-panel">
+        <div class="match-selectors">
+          <label><span>PRIMEIRO PERFIL</span><span class="match-input-wrap"><input id="match-first" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="match-first-list" placeholder="Digite ou selecione"><span class="match-suggestions" id="match-first-list" role="listbox" hidden></span></span></label>
+          <span class="match-symbol" aria-hidden="true">+</span>
+          <label><span>SEGUNDO PERFIL</span><span class="match-input-wrap"><input id="match-second" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="match-second-list" placeholder="Digite ou selecione"><span class="match-suggestions" id="match-second-list" role="listbox" hidden></span></span></label>
+        </div>
+        <button class="match-action" id="calculate-match" type="button">ANALISAR COMBINAÇÃO</button>
+        <p class="match-error" id="match-error" role="alert" hidden>Selecione duas opções válidas.</p>
+        <div class="match-result" id="match-result" hidden></div>
+      </div>
+    </section>
+
+    <section class="birth-chart-page birth-chart-view astro-only" hidden>
+      <header>
+        <p class="eyebrow">O CÉU COMO UM SISTEMA COMPLETO</p>
+        <h1>Crie seu<br><em>mapa astral.</em></h1>
+        <p>Antes do cálculo, é importante entender o que o mapa representa. Ele não é apenas uma lista de signos: é uma leitura conjunta do céu para uma data, horário e lugar específicos.</p>
+      </header>
+      <div class="birth-chart-grid">
+        <article class="chart-intro"><span>01</span><h2>O que é um mapa astral?</h2><p>O mapa natal é uma representação das posições do Sol, da Lua, dos planetas e de outros pontos astrológicos no momento do nascimento. Na tradição astrológica, ele funciona como uma linguagem simbólica para observar diferentes áreas da personalidade, necessidades emocionais, modos de agir, relações e temas recorrentes de desenvolvimento. O signo solar continua importante, mas passa a ser uma peça de uma estrutura muito maior.</p></article>
+        <article><span>02</span><h2>As quatro camadas da leitura</h2><div class="chart-layers"><p><strong>Planetas</strong><span>Mostram qual função está atuando. O Sol fala de identidade; a Lua, de necessidades emocionais; Mercúrio, de pensamento e comunicação.</span></p><p><strong>Signos</strong><span>Mostram como essa função tende a se expressar. Marte em Áries age de maneira diferente de Marte em Touro, embora o planeta continue ligado à iniciativa.</span></p><p><strong>Casas</strong><span>Mostram em qual campo da vida a função ganha maior destaque, como relações, trabalho, recursos, família ou vida pública.</span></p><p><strong>Aspectos</strong><span>Mostram como os pontos do mapa conversam entre si, indicando fluidez, tensão, reforço ou necessidade de integração.</span></p></div></article>
+        <article><span>03</span><h2>Por que horário e cidade importam?</h2><p>A data permite calcular posições planetárias, mas o horário e a localização definem o horizonte local, o Ascendente, o Meio do Céu e a distribuição das casas. Poucos minutos podem alterar graus importantes, e uma diferença maior pode mudar o Ascendente. O cálculo também precisa reconstruir corretamente o fuso e o horário de verão válidos naquela cidade e naquele ano.</p></article>
+        <article><span>04</span><h2>Para que ele serve?</h2><p>O mapa permite comparar tendências que, isoladamente, poderiam parecer contraditórias. Uma pessoa pode ter um Sol reservado, uma Lua expansiva e um Ascendente direto. Em vez de escolher apenas uma dessas descrições, a leitura procura compreender quando cada camada aparece, como elas cooperam e onde entram em conflito. Sua utilidade está na integração, não em produzir uma sentença imutável.</p></article>
+        <article><span>05</span><h2>O que o cálculo precisa</h2><ul><li>Data completa de nascimento.</li><li>Horário de nascimento, de preferência registrado com precisão.</li><li>Cidade e país de nascimento.</li><li>Confirmação quando o horário for aproximado ou desconhecido.</li></ul><p>Esses dados são processados no próprio aparelho. O mecanismo astronômico permanece disponível no PWA depois do primeiro carregamento e não envia as informações do mapa para um servidor.</p></article>
+        <article class="chart-houses-intro"><span>06</span><h2>O que são as casas?</h2><p>As casas dividem o céu local em doze setores e mostram <strong>onde</strong> cada energia do mapa tende a aparecer. Os planetas indicam o que atua, os signos mostram como isso se expressa e as casas situam essa expressão em campos concretos da vida. A Casa 1 começa no Ascendente; o Meio do Céu é um dos pontos centrais ligados à vida pública e à direção profissional.</p><div class="house-meanings"><p><b>1</b><span>identidade e iniciativa</span></p><p><b>2</b><span>recursos e valores</span></p><p><b>3</b><span>comunicação e aprendizado</span></p><p><b>4</b><span>raízes, lar e intimidade</span></p><p><b>5</b><span>criatividade, prazer e romances</span></p><p><b>6</b><span>rotina, trabalho e cuidados diários</span></p><p><b>7</b><span>parcerias e relações</span></p><p><b>8</b><span>intimidade, crises e recursos compartilhados</span></p><p><b>9</b><span>estudos, viagens e visão de mundo</span></p><p><b>10</b><span>vocação, reputação e vida pública</span></p><p><b>11</b><span>amizades, grupos e projetos</span></p><p><b>12</b><span>vida interior, recolhimento e encerramentos</span></p></div></article>
+        <article><span>07</span><h2>Como interpretar com responsabilidade</h2><p>O mapa descreve símbolos e relações entre símbolos. Ele não diagnostica saúde, não prevê acontecimentos inevitáveis e não reduz uma pessoa a uma configuração celeste. Uma boa leitura apresenta possibilidades, contradições e escolhas, deixando espaço para história pessoal, cultura e amadurecimento.</p></article>
+      </div>
+      <section class="chart-calculator" aria-labelledby="chart-form-title">
+        <header>
+          <p class="eyebrow">CÁLCULO LOCAL E PRIVADO</p>
+          <h2 id="chart-form-title">Monte seu mapa natal</h2>
+          <p>Os dados abaixo são processados somente neste aparelho. Nada é enviado, armazenado ou associado à sua conta.</p>
+        </header>
+        <form id="birth-chart-form" class="chart-form">
+          <label><span>NOME DO MAPA <small>opcional</small></span><input id="chart-name" type="text" maxlength="60" autocomplete="off" placeholder="Ex.: Meu mapa"></label>
+          <label><span>DATA DE NASCIMENTO</span><input id="chart-date" type="date" min="1900-01-01" max="2100-12-31" required></label>
+          <label><span>HORÁRIO LOCAL</span><input id="chart-time" type="time" step="60" required></label>
+          <label class="chart-location-field"><span>LOCAL DE NASCIMENTO</span><select id="chart-location" required>
+            <option value="">Selecione uma capital</option>
+            <option value="-23.5505|-46.6333|America/Sao_Paulo|São Paulo, SP">São Paulo, SP</option>
+            <option value="-22.9068|-43.1729|America/Sao_Paulo|Rio de Janeiro, RJ">Rio de Janeiro, RJ</option>
+            <option value="-15.7939|-47.8828|America/Sao_Paulo|Brasília, DF">Brasília, DF</option>
+            <option value="-19.9167|-43.9345|America/Sao_Paulo|Belo Horizonte, MG">Belo Horizonte, MG</option>
+            <option value="-12.9777|-38.5016|America/Bahia|Salvador, BA">Salvador, BA</option>
+            <option value="-8.0476|-34.8770|America/Recife|Recife, PE">Recife, PE</option>
+            <option value="-3.7319|-38.5267|America/Fortaleza|Fortaleza, CE">Fortaleza, CE</option>
+            <option value="-25.4284|-49.2733|America/Sao_Paulo|Curitiba, PR">Curitiba, PR</option>
+            <option value="-30.0346|-51.2177|America/Sao_Paulo|Porto Alegre, RS">Porto Alegre, RS</option>
+            <option value="-3.1190|-60.0217|America/Manaus|Manaus, AM">Manaus, AM</option>
+            <option value="-1.4558|-48.4902|America/Belem|Belém, PA">Belém, PA</option>
+            <option value="-16.6869|-49.2648|America/Sao_Paulo|Goiânia, GO">Goiânia, GO</option>
+            <option value="custom">Outro local / coordenadas</option>
+          </select></label>
+          <div class="chart-custom-location" id="chart-custom-location" hidden>
+            <label><span>LATITUDE</span><input id="chart-latitude" type="number" min="-90" max="90" step="0.0001" placeholder="Ex.: -23.5505"></label>
+            <label><span>LONGITUDE</span><input id="chart-longitude" type="number" min="-180" max="180" step="0.0001" placeholder="Ex.: -46.6333"></label>
+            <label><span>FUSO IANA</span><input id="chart-timezone" type="text" list="timezone-list" placeholder="Ex.: America/Sao_Paulo"><datalist id="timezone-list"><option value="America/Sao_Paulo"><option value="America/Bahia"><option value="America/Recife"><option value="America/Fortaleza"><option value="America/Manaus"><option value="America/Belem"><option value="America/Rio_Branco"><option value="America/New_York"><option value="Europe/Lisbon"><option value="Europe/London"><option value="Asia/Tokyo"></datalist></label>
+          </div>
+          <label><span>SISTEMA DE CASAS</span><select id="chart-house-system"><option value="P">Placidus (padrão)</option><option value="W">Signos inteiros</option><option value="A">Casas iguais</option><option value="K">Koch</option><option value="C">Campanus</option></select></label>
+          <details class="house-system-guide">
+            <summary>O que é Placidus e qual sistema escolher?</summary>
+            <div>
+              <p class="house-system-lead">O sistema de casas é a regra geométrica usada para traçar as doze divisões do mapa. Ele pode mudar as cúspides e, portanto, a casa em que um planeta aparece, mas não altera o signo nem a posição astronômica do planeta.</p>
+              <dl>
+                <div><dt>Placidus</dt><dd>Divide as casas conforme o tempo que os pontos do céu levam para percorrer partes do horizonte local. Produz casas de tamanhos diferentes e é o método mais usado pela astrologia ocidental contemporânea, por isso aparece como padrão.</dd></div>
+                <div><dt>Signos inteiros</dt><dd>O signo que contém o Ascendente inteiro se torna a Casa 1; o signo seguinte é a Casa 2, e assim por diante. É um método antigo, direto e sempre forma doze casas de 30 graus.</dd></div>
+                <div><dt>Casas iguais</dt><dd>Começa exatamente no grau do Ascendente e cria doze casas de 30 graus. Diferentemente dos signos inteiros, uma casa pode atravessar dois signos.</dd></div>
+                <div><dt>Koch</dt><dd>Também usa tempo e horizonte para formar quadrantes, mas aplica outra construção matemática. Costuma ser adotado por escolas que dão bastante peso ao local e ao horário exato.</dd></div>
+                <div><dt>Campanus</dt><dd>Divide o espaço celeste ao redor do observador em doze setores iguais e depois os projeta no zodíaco. Destaca a orientação espacial do céu visto daquele local.</dd></div>
+              </dl>
+              <p class="house-system-tip"><strong>Para começar:</strong> mantenha Placidus. Depois, compare com Signos inteiros se quiser observar como outra tradição redistribui os mesmos planetas. Não existe um único sistema obrigatório para todas as escolas astrológicas; o importante é saber qual regra foi usada e manter consistência na interpretação.</p>
+            </div>
+          </details>
+          <p class="chart-form-note">O primeiro carregamento prepara o mecanismo astronômico para uso offline. Para cidades ainda não listadas, use latitude, longitude e um fuso no formato IANA.</p>
+          <button class="chart-submit" id="chart-submit" type="submit">CALCULAR MEU MAPA</button>
+          <p class="chart-error" id="chart-error" role="alert" hidden></p>
+        </form>
+        <div class="chart-result" id="chart-result" hidden></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>MBTI &amp; Astrologia</strong> · protótipo editorial independente.</p>
+    <p>Referências: <a href="https://www.myersbriggs.org/my-mbti-personality-type/the-mbti-preferences/" target="_blank" rel="noreferrer">Myers &amp; Briggs Foundation</a>, <a href="https://www.16personalities.com/articles/our-theory/" target="_blank" rel="noreferrer">16Personalities</a> e <a href="https://www.astro.com/astrology/in_elements_e.htm" target="_blank" rel="noreferrer">Astrodienst</a>. Cálculos astronômicos com Swiss Ephemeris; <a href="vendor/swisseph/LICENSE.txt" target="_blank">licença AGPL</a>.</p>
+  </footer>
+
+  <dialog id="detail-dialog">
+    <button class="dialog-close" type="button" aria-label="Fechar">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script src="assets/app.js" defer></script>
+  <script src="assets/astro-chart.js?v=14" type="module"></script>
+</body>
+</html>
