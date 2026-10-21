@@ -1,5 +1,5 @@
-const CACHE = "personalidades-astrologia-v16";
-const ASSETS = ["./", "index.html", "assets/styles.css?v=16", "assets/app.js?v=16", "assets/astro-chart.js?v=16", "assets/icon.svg", "manifest.webmanifest", "vendor/swisseph/swisseph-browser.js", "vendor/swisseph/swisseph.js", "vendor/swisseph/swisseph.wasm", "vendor/swisseph/ephe/sepl_18.se1", "vendor/swisseph/ephe/semo_18.se1", "vendor/swisseph/LICENSE.txt"];
+const CACHE = "personalidades-astrologia-v18";
+const ASSETS = ["./", "index.html", "assets/styles.css?v=18", "assets/app.js?v=18", "assets/astro-chart.js?v=18", "assets/icon.svg", "manifest.webmanifest", "vendor/swisseph/swisseph-browser.js", "vendor/swisseph/swisseph.js", "vendor/swisseph/swisseph.wasm", "vendor/swisseph/ephe/sepl_18.se1", "vendor/swisseph/ephe/semo_18.se1", "vendor/swisseph/LICENSE.txt"];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", event => {

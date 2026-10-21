@@ -268,8 +268,8 @@ a { color: inherit; }
 .chart-status p { margin: 0; color: var(--muted); line-height: 1.65; }
 footer { padding: 36px clamp(24px, 5vw, 76px); display: flex; justify-content: space-between; gap: 20px; color: var(--muted); border-top: 1px solid var(--line); font-size: 12px; }
 footer p { margin: 0; }
-dialog { width: min(1120px, calc(100% - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--dialog-accent, #7d8a91); color: inherit; background: var(--panel); box-shadow: 0 40px 100px rgba(0,0,0,.35); }
-dialog::backdrop { background: rgba(16,20,24,.72); backdrop-filter: blur(7px); }
+dialog { width: min(1120px, calc(100% - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 1px solid var(--dialog-accent, #7d8a91); color: inherit; background: var(--panel); box-shadow: 0 40px 100px rgba(0,0,0,.35); overscroll-behavior: contain; contain: layout paint; }
+dialog::backdrop { background: rgba(8,12,22,.82); }
 .dialog-close { width: 54px; height: 54px; position: sticky; float: right; top: 18px; right: 18px; z-index: 4; border: 1px solid currentColor; border-radius: 50%; background: var(--panel); color: inherit; font-size: 32px; cursor: pointer; }
 .detail-hero { min-height: 300px; padding: 68px 76px 54px; border-bottom: 1px solid var(--line); background: linear-gradient(125deg, color-mix(in srgb, var(--dialog-accent), transparent 88%), transparent 55%); }
 .detail-overline { color: var(--dialog-accent); font-weight: 800; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; }
@@ -281,7 +281,7 @@ dialog::backdrop { background: rgba(16,20,24,.72); backdrop-filter: blur(7px); }
 .detail-hero .sign-glyph-title { margin-right: 12px; font-weight: 400; opacity: .72; }
 .detail-hero .detail-type-title { margin: 0 0 16px; color: var(--dialog-accent); font-size: 15px; font-weight: 850; letter-spacing: .17em; text-transform: uppercase; }
 .detail-sections { padding: 55px 76px 76px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
-.detail-block { padding: 30px 34px 34px 0; border-top: 1px solid var(--line); }
+.detail-block { padding: 30px 34px 34px 0; border-top: 1px solid var(--line); content-visibility: auto; contain-intrinsic-size: auto 220px; }
 .detail-block:nth-child(even) { padding-left: 34px; border-left: 1px solid var(--line); }
 .detail-block.full { grid-column: 1 / -1; padding-left: 0; border-left: 0; }
 .detail-block h3 { margin: 0 0 14px; color: var(--dialog-accent); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
@@ -289,6 +289,11 @@ dialog::backdrop { background: rgba(16,20,24,.72); backdrop-filter: blur(7px); }
 .detail-block p { margin: 0; }.detail-block ul { margin: 0; padding-left: 20px; }
 .detail-block .spaced { margin-top: 18px; }
 .detail-block .section-note { margin-top: 16px; padding-left: 16px; border-left: 3px solid var(--identity); font-size: 14px; }
+.map-unique { display: grid; grid-template-columns: minmax(250px,.8fr) minmax(0,1.35fr); gap: 10px 7vw; align-items: start; }
+.map-unique > span { grid-column: 1 / -1; }
+.map-unique h2 { margin-bottom: 0; }
+.map-unique-copy p:first-child { margin-top: 0; }
+.map-unique-copy p:last-child { margin-bottom: 0; }
 .pref-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-top: 22px; }
 .pref-row span { min-height: 76px; padding: 10px; display: grid; place-content: center; text-align: center; color: #fff; font-weight: 800; }
 .pref-row small { display: block; margin-top: 3px; font-weight: 500; opacity: .85; }.pref-row span:nth-child(1){background:var(--energy)}.pref-row span:nth-child(2){background:var(--perception)}.pref-row span:nth-child(3){background:var(--decision)}.pref-row span:nth-child(4){background:var(--structure)}
@@ -360,6 +365,8 @@ body.mode-astro { --ink: #f3f0ff; --muted: #bbb5d0; --paper: #07152f; --panel: #
   .scale-labels { min-height: 0; }
   .birth-chart-grid .chart-intro { grid-column: auto; }
   .about-grid article { min-height: auto; padding: 30px 24px 36px; }
+  .map-unique { grid-template-columns: 1fr; }
+  .map-unique > span { grid-column: auto; }
   .identity-compare { grid-template-columns: 1fr; }
   .astro-points p, .chart-data-points p { grid-template-columns: 1fr; gap: 4px; }
   footer { flex-direction: column; }
